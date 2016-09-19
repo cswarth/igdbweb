@@ -9,5 +9,5 @@ setup(name='igdbweb',
           'flask','frozen-flask','numpy','biopython'
       ],
 
-      package_data={'igdbweb': ['templates/*']}
+      package_data={'igdbweb': ['templates/*', 'static/*']}
 )
