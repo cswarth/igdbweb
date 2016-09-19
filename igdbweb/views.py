@@ -16,7 +16,6 @@ import gene
 import datetime
 import getpass
 import hashlib
-import pandas as pd
 from cStringIO import StringIO
 from jinja2 import Environment, FileSystemLoader
 from flask import render_template, abort, Response, redirect, url_for, request, g, jsonify

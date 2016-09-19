@@ -5,5 +5,9 @@ setup(name='igdbweb',
       description='Immunoglobin germline web interface',
       author='Chris Warth <cwarth@fredhutch.org>',
       packages=find_packages('igdbweb'),
+      install_requires=[
+          'flask','frozen-flask','numpy','biopython'
+      ],
+
       package_data={'igdbweb': ['templates/*']},
       )
