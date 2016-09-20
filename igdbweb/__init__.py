@@ -27,7 +27,6 @@ def before_first_request():
 
     objects = [Gene.fromfile(f) for f in content_file_iterator(options.content)]
     objects = [o for o in objects if o is not None]
-    objects = objects[:4]
     objects = dict([ (g.id, g) for g in objects ])
     app.config['GENES'] = objects
     print("In __init__ before_first_request, objects={}".format(objects))
