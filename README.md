@@ -1,6 +1,6 @@
-# Immunoglobin Germline Database Website Generator
+# Immunoglobulin Germline Database Website Generator
 
-Generate a static website to navigate the Immunoglobin Germline
+Generate a static website to navigate the Immunoglobulin Germline
 Database (IGDB).  Scripts and templates in this repo build a static
 website to help navigate among the Ig germlines.  The raw "database"
 is store as JSON formatted objects.  The database is not stored in
