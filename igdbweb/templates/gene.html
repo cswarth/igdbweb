@@ -30,8 +30,6 @@
 	Sequence:&nbsp;&nbsp;&nbsp;<a href="{{url_for("gene_fasta", id=id)}}" download="{{id}}.fasta">FASTA</a>&nbsp;&nbsp;&nbsp;<a href="{{url_for("gene_phylip", id=id)}}" download="{{id}}.phy">PHYLIP</a>  <br/>
 	<div class="seq">>{{id}}<br/>
 	  <code>
-{{sequence|safe}}
-
 {{sequence | e | wordwrap(wrapstring="<br/>") | safe }}
 	  </code>
 	</div></p>
