@@ -28,6 +28,10 @@ def load_template(name):
     template = env.get_template(name)
     return template
 
+# Gene is a container for the json definition of a gene.
+# each json attribute will become an attribute of the Gene instance.
+# potentially this will cause problems if a JSON attribute conflicts with an existing
+# instance attribute.
 class Gene(object):
     @classmethod
     def fromfile(cls, filename):

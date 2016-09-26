@@ -19,6 +19,7 @@ import hashlib
 from cStringIO import StringIO
 from jinja2 import Environment, FileSystemLoader
 from flask import render_template, abort, Response, redirect, url_for, request, g, jsonify
+from flask_breadcrumbs import register_breadcrumb
 
 from Bio.Seq import Seq
 from Bio import SeqIO
@@ -29,6 +30,7 @@ from igdbweb import app
 
 @app.route('/index')
 @app.route("/")
+@register_breadcrumb(app, '.', 'Index')
 def index():
     genes = app.config['GENES']
     print("generating index page for {}".format(genes))
@@ -43,7 +45,15 @@ def index():
 
     return render_template('index.html', **renderdict)
 
+def view_gene_dlc():
+    id = request.view_args['id']
+    genes = app.config['GENES']
+    gene = genes[id]
+    return [{'text': id, 'url': url_for('gene_page', id=id)}]
+
 @app.route("/gene/<id>.html")
+@register_breadcrumb(app, '.gene', '<ignored>',
+                     dynamic_list_constructor=view_gene_dlc)
 def gene_page(id=None):
     print("generating gene page for {}".format(id))
     genes = app.config['GENES']

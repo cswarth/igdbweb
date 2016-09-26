@@ -3,6 +3,8 @@ import os
 import logging
 import json
 from flask import Flask, g
+from flask_breadcrumbs import Breadcrumbs
+
 from gene import Gene
 
 import os.path
@@ -11,6 +13,9 @@ os.environ['IGDBWEB_SETTINGS'] = os.path.join(
 
 app = Flask(__name__)
 app.config.from_envvar('IGDBWEB_SETTINGS')
+
+# Initialize Flask-Breadcrumbs
+Breadcrumbs(app=app)
 
 # iterate through json files under`dir`
 def content_file_iterator(dir):
