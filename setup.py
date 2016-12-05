@@ -6,7 +6,7 @@ setup(name='igdbweb',
       author='Chris Warth <cwarth@fredhutch.org>',
       packages=find_packages(exclude=['contrib', 'docs', 'tests']),
       install_requires=[
-          'flask','frozen-flask','numpy','biopython'
+          'flask','frozen-flask','Flask-Breadcrumbs','numpy','biopython'
       ],
 
       package_data={'igdbweb': ['templates/*', 'static/*']}
