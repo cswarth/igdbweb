@@ -4,7 +4,7 @@
 Convert IGDB json files into static website.
 
 Usage:
-    python -m igdbweb
+    python -m ogrdbweb
 
 '''
 from __future__ import print_function
@@ -14,17 +14,17 @@ import sys
 import argparse
 from flask_frozen import Freezer
 
-from igdbweb import app
+from ogrdbweb import app
 
 
 # pass commandline arguments to flask app
 # http://flask.pocoo.org/snippets/133/
 #
 # Start this app with,
-# 	$ python -m igdbweb 
+# 	$ python -m ogrdbweb 
    
 if __name__ == "__main__":
-    parser = argparse.ArgumentParser(prog='igdbbweb', description=__doc__)
+    parser = argparse.ArgumentParser(prog='ogrdbbweb', description=__doc__)
 
     parser.add_argument('-H', '--host', default="0.0.0.0",
                         help='Hostname of the Flask app [%(default)s]')

@@ -26,7 +26,7 @@ from Bio import SeqIO
 from Bio.SeqRecord import SeqRecord
 from Bio.Alphabet import IUPAC
 
-from igdbweb import app
+from ogrdbweb import app
 
 @app.route('/index')
 @app.route("/")

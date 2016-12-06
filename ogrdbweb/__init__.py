@@ -41,8 +41,8 @@ def before_first_request():
         from logging.handlers import SMTPHandler, RotatingFileHandler
         from logging import Formatter
         mail_handler = SMTPHandler('127.0.0.1',
-                                   'igdbweb@fredhutch.org',
-                                   app.config['ADMINS'], 'igdb failed')
+                                   'ogrdbweb@fredhutch.org',
+                                   app.config['ADMINS'], 'ogrdb failed')
         mail_handler.setLevel(logging.ERROR)
         log_path = app.config['LOG_PATH']
         file_handler = RotatingFileHandler(log_path, maxBytes=1 << 20, backupCount=5)
@@ -55,4 +55,4 @@ def before_first_request():
         app.logger.addHandler(file_handler)
         app.logger.addHandler(mail_handler)
 
-import igdbweb.views
+import ogrdbweb.views
